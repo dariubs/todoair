@@ -17,6 +17,7 @@
 
 		<!--Input section-->
 		<section>
+			Insert todos
 			<form ng-submit="add()">
 				<input type="text"  ng-model="todoInput" required>
 				<input type="time"  ng-model="timeInput">
@@ -26,16 +27,23 @@
 			
 		</section>
 
+		<!--search section-->
+		<section>
+			<input type="text" ng-model="search" placeholder="search in todos">
+		</section>
+
 		<!--list section-->
 		<section>
 			<ul>
-				<li ng-repeat="item in list">
+				<li ng-repeat="item in list | filter:search">
 					<input type="checkbox" ng-model="item.done">
 					{{item.todo}} @ {{item.time}}
-					<button>X</button>
+					<button ng-click="remove($index)">remove</button>
 				</li>
 			</ul>
 		</section>
+
+		
 
 	</main>
 
