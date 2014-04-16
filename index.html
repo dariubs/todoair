@@ -1,46 +1,63 @@
 <!doctype HTML>
 <html ng-app>
 <head>
-	<title>TodoAir</title>
+	<title>Todo Air</title>
+	<link rel="stylesheet" type="text/css" href="static/css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="static/css/todoair.css">
+
 	<script type="text/javascript" src="static/js/angular.js"></script>
-	<script type="text/javascript" src="static/js/todoair.js"></script>
+	<script type="text/javascript" src="static/assets/todoair.js"></script>
+	<script type="text/javascript" src="static/js/foundation.min.js"></script>
 </head>
 <body>
 
 	<!-- Header -->
-	<header>
-		<h1>todoair</h1>
+	<header class="row centerdText">
+		<h1 class="large-12 large-centered medium-12 medium-centered small-12 small-centered column"><b>Todo Air</b></h1>
 	</header>
 
 	<!--Main section -->
-	<main ng-controller="MainController">
+	<main ng-controller="MainController" >
 
-		<!--Input section-->
-		<section>
-			Insert todos
-			<form ng-submit="add()">
-				<input type="text"  ng-model="todoInput" required>
-				<input type="time"  ng-model="timeInput">
-				<input type="submit">
-			</form>
-			
-			
-		</section>
 
 		<!--search section-->
-		<section>
-			<input type="text" ng-model="search" placeholder="search in todos">
+		<section class="row">
+				<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+					<legend>Search items</legend>
+					<section>
+						<input type="text" ng-model="search" placeholder="search in todos">
+					</section>
+				</fieldset>
 		</section>
+
+		<!--Input section-->
+		<section class="row">
+			<form ng-submit="add()">
+				<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+	    			<legend>Add todos</legend>
+	      				<input type="text"  ng-model="todoInput" required class="large-3 columns" placeholder="What do you want to do?">
+						<input type="text"  ng-model="timeInput" class="large-3 columns" placeholder="When?">
+						<input type="submit" value="add" class="tiny radius button centerdArea">
+	  			</fieldset>
+			</form>
+
+
+
+		</section>
+
+		
 
 		<!--list section-->
 		<section>
-			<ul>
-				<li ng-repeat="item in list | filter:search">
-					<input type="checkbox" ng-model="item.done">
-					{{item.todo}} @ {{item.time}}
-					<button ng-click="remove($index)">remove</button>
-				</li>
-			</ul>
+			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+				<ul>
+					<li ng-repeat="item in list | filter:search" class="items">
+						<input type="checkbox" ng-model="item.done">
+						{{item.todo}} <span class="at">@</span> {{item.time}}
+						<button ng-click="remove($index)" class="tiny radius button centerdArea">X</button>
+					</li>
+				</ul>
+			</fieldset>
 		</section>
 
 		

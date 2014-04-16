@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+body {
+	font-family: 'PT Sans', sans-serif;
+	background-color: #edfdd9
+}
+
+.centerdText {
+	text-align: center;
+}
+
+.centerdArea {
+	align:center;
+}
+
+.items {
+	text-decoration: none;
+	font-size: 1.5em;
+	list-style: none;
+}
+
+.at {
+	font-size: 0.9em;
+}
+
+header>h1 {
+	font-family: 'PT Sans', sans-serif;
+	color: #404a51;
+}
