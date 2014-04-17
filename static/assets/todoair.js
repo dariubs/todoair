@@ -1,5 +1,5 @@
-
-function MainController($scope){
+angular.module('todoair',[])
+.controller("MainController",function ($scope){
 
 	$scope.list = [
 		];
@@ -13,4 +13,6 @@ function MainController($scope){
 	$scope.remove = function(i){
 		$scope.list.splice(i,1);
 	};
-}
+});
+
+

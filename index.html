@@ -1,13 +1,13 @@
 <!doctype HTML>
-<html ng-app>
+<html ng-app="todoair">
 <head>
 	<title>Todo Air</title>
 	<link rel="stylesheet" type="text/css" href="static/css/foundation.css">
 	<link rel="stylesheet" type="text/css" href="static/css/todoair.css">
-
 	<script type="text/javascript" src="static/js/angular.js"></script>
 	<script type="text/javascript" src="static/assets/todoair.js"></script>
 	<script type="text/javascript" src="static/js/foundation.min.js"></script>
+	<script type="text/javascript" src="static/js/angularui/sortable.js"></script>
 </head>
 <body>
 
@@ -50,8 +50,8 @@
 		<!--list section-->
 		<section>
 			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
-				<ul>
-					<li ng-repeat="item in list | filter:search" class="items">
+				<ul ui-sortable>
+					<li ng-repeat="item in list | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
 						{{item.todo}} <span class="at">@</span> {{item.time}}
 						<button ng-click="remove($index)" class="tiny radius button centerdArea">X</button>
