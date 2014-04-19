@@ -6,7 +6,7 @@ angular.module('todoair',[])
  
  	/*Add to todoList */
 	$scope.add = function() {
-	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false});
+	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false , color:$scope.colorInput});
 	};
 
 	/*remove from todolist */

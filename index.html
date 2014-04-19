@@ -2,12 +2,22 @@
 <html ng-app="todoair">
 <head>
 	<title>Todo Air</title>
+
+	<!--jQuery-->
+	<script type="text/javascript" src="static/js/jquery-2.1.0.js"></script>
+
+	<!--foundation-->
 	<link rel="stylesheet" type="text/css" href="static/css/foundation.css">
-	<link rel="stylesheet" type="text/css" href="static/css/todoair.css">
-	<script type="text/javascript" src="static/js/angular.js"></script>
-	<script type="text/javascript" src="static/assets/todoair.js"></script>
 	<script type="text/javascript" src="static/js/foundation.min.js"></script>
+
+	<!--angularJS-->
+	<script type="text/javascript" src="static/js/angular.js"></script>
 	<script type="text/javascript" src="static/js/angularui/sortable.js"></script>
+
+	<!custom-->
+	<link rel="stylesheet" type="text/css" href="static/css/todoair.css">
+	<script type="text/javascript" src="static/assets/todoair.js"></script>
+
 </head>
 <body>
 
@@ -37,6 +47,13 @@
 	    			<legend>Add todos</legend>
 	      				<input type="text"  ng-model="todoInput" required class="large-3 columns" placeholder="What do you want to do?">
 						<input type="text"  ng-model="timeInput" class="large-3 columns" placeholder="When?">
+
+						<!--color options-->
+						<input type="radio" ng-model="colorInput" name="colorInput" value="1"> Black
+						<input type="radio" ng-model="colorInput" name="colorInput" value="2" selected> Blue 
+						<input type="radio" ng-model="colorInput" name="colorInput" value="3"> Green 
+						<input type="radio" ng-model="colorInput" name="colorInput" value="4"> Red <br>
+
 						<input type="submit" value="add" class="tiny radius button centerdArea">
 	  			</fieldset>
 			</form>
@@ -49,11 +66,11 @@
 
 		<!--list section-->
 		<section>
-			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+			<fieldset class="large-7 medium-7 large-centered medium-centered columns todoBack">
 				<ul ui-sortable>
 					<li ng-repeat="item in list | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
-						<span class="is-{{item.done}}">{{item.todo}} <span class="at">@</span> {{item.time}}</span>
+						<span class="is-{{item.done}} color-{{item.color}}">{{item.todo}} <span class="at">@</span> {{item.time}}</span>
 						<button ng-click="remove($index)" class="tiny radius button centerdArea">X</button>
 					</li>
 				</ul>

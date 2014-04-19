@@ -28,12 +28,35 @@ header>h1 {
 	color: #404a51;
 }
 
+.todoBack {
+	background-color: #fefef6;
+}
+
 .is-false{
-	color: #1a1a1a;
+	
 }
 
 .is-true{
-	color: #aaaaaa;
+	
 	text-decoration: line-through;
 }
 
+.color-1 {
+	background-color: #808181;
+	color: #ecfafe;
+}
+
+.color-2 {
+	background-color: #aaecff;
+	color: #696a6b;
+}
+
+.color-3 {
+	background-color: #d2fbaa;
+	color: #6e6f6d;
+}
+
+.color-4 {
+	background-color: #fca7b3;
+	color: #2d2b2b;
+}
