@@ -53,7 +53,7 @@
 				<ul ui-sortable>
 					<li ng-repeat="item in list | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
-						{{item.todo}} <span class="at">@</span> {{item.time}}
+						<span class="is-{{item.done}}">{{item.todo}} <span class="at">@</span> {{item.time}}</span>
 						<button ng-click="remove($index)" class="tiny radius button centerdArea">X</button>
 					</li>
 				</ul>

@@ -27,3 +27,13 @@ header>h1 {
 	font-family: 'PT Sans', sans-serif;
 	color: #404a51;
 }
+
+.is-false{
+	color: #1a1a1a;
+}
+
+.is-true{
+	color: #aaaaaa;
+	text-decoration: line-through;
+}
+
