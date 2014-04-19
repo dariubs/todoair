@@ -9,7 +9,7 @@ angular.module('todoair',[])
  
  	/*Add to todoList */
 	$scope.addTodo = function() {
-	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false , color:$scope.colorInput, cat:$scope.cat});
+	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false , color:$scope.colorInput, cat:$scope.catName});
 	};
 
 	/*remove from todolist */

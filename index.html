@@ -50,12 +50,7 @@
       				<input  type="text"  ng-model="catInput" required class="large-3 columns" placeholder="?">
 					<input type="submit" value="add cat" class="tiny radius button centerdArea">
 
-					<!-- List of cats-->
-					<ul>
-						<li ng-repeat="cat in cats" class="items" >
-							{{cat.catName}}
-						</li>
-					</ul>
+					
   			</fieldset>
 		</form>
 
@@ -71,6 +66,13 @@
 		<form ng-submit="addTodo()">
 			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
     			<legend id="todoInput">Add todos</legend>
+	    			<span>in </span>
+	    			<!--categories list-->
+	    			<select ng-model="catName">
+			          <option  ng-repeat="cat in cats" value="{{cat.catID}}">{{cat.catName}}</option>
+			        </select>
+
+		        	<!--todo field-->
       				<input  type="text"  ng-model="todoInput" required class="large-3 columns" placeholder="What do you want to do?">
       				<span id="todoOptions">
 						<input type="text"  ng-model="timeInput" class="large-3 columns" placeholder="When?">
@@ -99,7 +101,7 @@
 				<ul ui-sortable>
 					<li ng-repeat="item in list | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
-						<span class="is-{{item.done}} color-{{item.color}}">{{item.todo}} <span class="at">@</span> {{item.time}}</span>
+						<span class="is-{{item.done}} color-{{item.color}}">{{item.todo}} <span class="at">@</span> {{item.time}}  in {{item.cat}}</span>
 						<button ng-click="removeTodo($index)" class="tiny radius button centerdArea">X</button>
 					</li>
 				</ul>
