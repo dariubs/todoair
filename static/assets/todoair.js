@@ -3,20 +3,34 @@ angular.module('todoair',[])
 
 	$scope.list = [
 		];
+
+	$scope.cats = [
+	];
  
  	/*Add to todoList */
-	$scope.add = function() {
-	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false , color:$scope.colorInput});
+	$scope.addTodo = function() {
+	  	$scope.list.push({todo:$scope.todoInput,time:$scope.timeInput, done:false , color:$scope.colorInput, cat:$scope.cat});
 	};
 
 	/*remove from todolist */
-	$scope.remove = function(i){
+	$scope.removeTodo = function(i){
 		$scope.list.splice(i,1);
 	};
 
-	$scope.did = function(i){
-		$scope.list()
-	}
+
+	/*Add to todoList */
+	$scope.addCat = function() {
+		var id = $scope.cats.length;
+	  	$scope.cats.push({catID:id , catName:$scope.catInput});
+	  	$scope.catInput = "";
+	};
+
+	
 });
+
+
+/* jQuery */
+
+
 
 

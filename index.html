@@ -40,23 +40,51 @@
 				</fieldset>
 		</section>
 
+
+		<!--Cat section-->
+		<section class="row">
+
+		<form ng-submit="addCat()">
+			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+    			<legend id="todoInput">Add Category</legend>
+      				<input  type="text"  ng-model="catInput" required class="large-3 columns" placeholder="?">
+					<input type="submit" value="add cat" class="tiny radius button centerdArea">
+
+					<!-- List of cats-->
+					<ul>
+						<li ng-repeat="cat in cats" class="items" >
+							{{cat.catName}}
+						</li>
+					</ul>
+  			</fieldset>
+		</form>
+
+
+
+		</section>
+
+
 		<!--Input section-->
 		<section class="row">
-			<form ng-submit="add()">
-				<fieldset class="large-7 medium-7 large-centered medium-centered columns">
-	    			<legend>Add todos</legend>
-	      				<input type="text"  ng-model="todoInput" required class="large-3 columns" placeholder="What do you want to do?">
+
+		<!-- Todo Input section -->
+		<form ng-submit="addTodo()">
+			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+    			<legend id="todoInput">Add todos</legend>
+      				<input  type="text"  ng-model="todoInput" required class="large-3 columns" placeholder="What do you want to do?">
+      				<span id="todoOptions">
 						<input type="text"  ng-model="timeInput" class="large-3 columns" placeholder="When?">
 
 						<!--color options-->
-						<input type="radio" ng-model="colorInput" name="colorInput" value="1"> Black
-						<input type="radio" ng-model="colorInput" name="colorInput" value="2" selected> Blue 
+						<input type="radio" ng-model="colorInput" name="colorInput" value="1" checked> Black
+						<input type="radio" ng-model="colorInput" name="colorInput" value="2" > Blue 
 						<input type="radio" ng-model="colorInput" name="colorInput" value="3"> Green 
 						<input type="radio" ng-model="colorInput" name="colorInput" value="4"> Red <br>
 
 						<input type="submit" value="add" class="tiny radius button centerdArea">
-	  			</fieldset>
-			</form>
+					</span>
+  			</fieldset>
+		</form>
 
 
 
@@ -66,20 +94,19 @@
 
 		<!--list section-->
 		<section>
+
 			<fieldset class="large-7 medium-7 large-centered medium-centered columns todoBack">
 				<ul ui-sortable>
 					<li ng-repeat="item in list | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
 						<span class="is-{{item.done}} color-{{item.color}}">{{item.todo}} <span class="at">@</span> {{item.time}}</span>
-						<button ng-click="remove($index)" class="tiny radius button centerdArea">X</button>
+						<button ng-click="removeTodo($index)" class="tiny radius button centerdArea">X</button>
 					</li>
 				</ul>
 			</fieldset>
 		</section>
-
-		
-
 	</main>
+
 
 </body>
 </html>
