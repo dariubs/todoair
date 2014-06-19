@@ -40,11 +40,16 @@ angular.module('todoair',[])
 	  	$scope.catInput = "";
 	};
 
+	$scope.removeCat = function(i){
+		$scope.cats.splice(i,1);
+		localStorage.setItem('cats', JSON.stringify($scope.cats));
+	};
 	
 });
 
 
-/* jQuery */
+
+
 
 
 
