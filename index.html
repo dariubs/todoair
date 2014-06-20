@@ -30,24 +30,14 @@
 	<main ng-controller="MainController" >
 
 
-		<!--search section-->
-		<section class="row">
-				<fieldset class="large-7 medium-7 large-centered medium-centered columns">
-					<legend>Search items</legend>
-					<section>
-						<input type="text" ng-model="search" placeholder="search in todos">
-					</section>
-				</fieldset>
-		</section>
-
 
 		<!--Cat section-->
 		<section class="row">
 
 		<form ng-submit="addCat()">
 			<fieldset class="large-7 medium-7 large-centered medium-centered columns">
-    			<legend id="todoInput">Add Category</legend>
-      				<input  type="text"  ng-model="catInput" required class="large-3 columns" placeholder="?">
+    			<legend id="todoInput">Create List</legend>
+      				<input  type="text"  ng-model="catInput" required class="large-3 columns" placeholder="List Name">
 					<input type="submit" value="add cat" class="tiny radius button centerdArea">
 
 					
@@ -92,6 +82,17 @@
 
 		</section>
 
+
+
+		<!--search section-->
+		<section class="row">
+				<fieldset class="large-7 medium-7 large-centered medium-centered columns">
+					<legend>Search items</legend>
+					<section>
+						<input type="text" ng-model="search" placeholder="search in todos">
+					</section>
+				</fieldset>
+		</section>
 		
 
 		<!--list section-->
@@ -99,7 +100,7 @@
 
 			<fieldset class="large-7 medium-7 large-centered medium-centered columns todoBack">
 				<ul ui-sortable>
-					<li ng-repeat="item in list track by $index | filter:search" class="items" draggable="true" >
+					<li contenteditable="true" ng-repeat="item in list track by $index | filter:search" class="items" draggable="true" >
 						<input type="checkbox" ng-model="item.done">
 						<span class="is-{{item.done}} color-{{item.color}}">{{item.todo}} <span class="at">@</span> {{item.time}}  in {{item.cat}}</span>
 						<button ng-click="removeTodo($index)" class="tiny radius button centerdArea">X</button>
