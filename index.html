@@ -58,9 +58,14 @@
     			<legend id="todoInput">Add todos</legend>
 					<!--categories list-->
 	    			<legend id="todoInput">category</legend>
-	    			<select ng-model="catName" required>
-			          <option  ng-repeat="cat in cats track by $index" value="{{cat.catID}}">{{cat.catName}}</option>
-			        </select>
+
+	    			<input type="text" ng-model="searchCats" placeholder="search in cats">
+
+	    			
+			        <span ng-repeat="cat in cats track by $index | filter:searchCats">
+			        <input ng-model="catName"   type="radio" value="{{cat.catID}}">{{cat.catName}}<br>
+			        </span> 
+			        
 
 		        	<!--todo field-->
       				<input  type="text"  ng-model="todoInput" class="large-3 columns" placeholder="What do you want to do?" required>
