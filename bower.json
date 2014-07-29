@@ -1,0 +1,22 @@
+{
+  "name": "todoair",
+  "version": "0.0.0",
+  "homepage": "https://github.com/edrock/todoair",
+  "authors": [
+    "Dariush <dariushem@yahoo.com>"
+  ],
+  "description": "simple todolist",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.2.21",
+    "foundation" : "~5.3.1"
+  }
+}
